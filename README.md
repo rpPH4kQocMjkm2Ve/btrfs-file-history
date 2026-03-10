@@ -6,25 +6,32 @@ Scans all subvolumes visible from a mount point and shows when a file
 was created, modified, or deleted — as a colored tree, a timeline
 table, Graphviz graph, or JSON.
 
+## Install
+
+### Arch Linux (AUR)
+
+```
+yay -S btrfs-file-history-git
+```
+
+### gitpkg
+
+```
+sudo gitpkg install btrfs-file-history
+```
+
+### Manual
+
+```
+sudo make install
+```
+
 ## Dependencies
 
 - `python3` >= 3.9
 - `btrfs-progs`
 - `util-linux` (`findmnt`)
 - `e2fsprogs` (`filefrag`) — optional, for extent analysis
-
-## Install
-
-```
-sudo gitpkg install btrfs-file-history
-```
-
-Or manually:
-
-```
-cd btrfs-file-history
-sudo make install
-```
 
 ## Usage
 
