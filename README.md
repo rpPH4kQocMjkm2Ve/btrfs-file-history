@@ -158,4 +158,4 @@ snapshots/daily.4                        ─ unchanged  1.3KiB 2024-01-16 14:22:
 
 ## License
 
-GPL-3.0-or-later
+AGPL-3.0-or-later
