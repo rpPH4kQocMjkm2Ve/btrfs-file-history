@@ -342,10 +342,10 @@ def render_graphviz(
             border = _DOT_COLORS.get(change, "#6b7280")
             fill = _DOT_FILLS.get(change, fill)
 
-            st: Optional[FileState] = state_by_uuid.get(sv.uuid)
+            file_st = state_by_uuid.get(sv.uuid)
             extra = change
-            if st and st.size is not None:
-                extra = f"{change} ({_human_size(st.size)})"
+            if file_st and file_st.size is not None:
+                extra = f"{change} ({_human_size(file_st.size)})"
             label = _dot_escape(
                 f"{sv.name}\\nid={sv.subvol_id} "
                 f"ogen={sv.ogen}\\n{extra}"
@@ -399,14 +399,14 @@ def render_json(
         }
         if sv.uuid in trans_by_uuid:
             node["file_status"] = trans_by_uuid[sv.uuid]
-            st: Optional[FileState] = state_by_uuid.get(sv.uuid)
-            if st:
-                node["file_size"] = st.size
-                node["file_mtime"] = st.mtime
-                if st.exclusive_bytes is not None:
-                    node["exclusive_bytes"] = st.exclusive_bytes
-                if st.shared_bytes is not None:
-                    node["shared_bytes"] = st.shared_bytes
+            file_st = state_by_uuid.get(sv.uuid)
+            if file_st:
+                node["file_size"] = file_st.size
+                node["file_mtime"] = file_st.mtime
+                if file_st.exclusive_bytes is not None:
+                    node["exclusive_bytes"] = file_st.exclusive_bytes
+                if file_st.shared_bytes is not None:
+                    node["shared_bytes"] = file_st.shared_bytes
         nodes.append(node)
 
     data = {
