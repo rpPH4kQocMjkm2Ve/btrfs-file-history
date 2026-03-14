@@ -1,5 +1,8 @@
 # btrfs-file-history
 
+[![CI](https://github.com/rpPH4kQocMjkm2Ve/btrfs-file-history/actions/workflows/ci.yml/badge.svg)](https://github.com/rpPH4kQocMjkm2Ve/btrfs-file-history/actions/workflows/ci.yml)
+![License](https://img.shields.io/github/license/rpPH4kQocMjkm2Ve/btrfs-file-history)
+
 Track file and directory lifecycle across btrfs snapshots.
 
 Scans all subvolumes visible from a mount point and shows when a file
