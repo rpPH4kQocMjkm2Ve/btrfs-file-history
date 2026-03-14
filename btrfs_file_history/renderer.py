@@ -12,7 +12,7 @@ from io import StringIO
 from typing import Optional, TextIO
 
 from .btrfs import Subvolume
-from .scanner import FileHistory, FileState, FileTransition
+from .scanner import FileHistory, FileState
 from .tree import SubvolumeTree
 
 
