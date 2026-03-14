@@ -342,7 +342,7 @@ def render_graphviz(
             border = _DOT_COLORS.get(change, "#6b7280")
             fill = _DOT_FILLS.get(change, fill)
 
-            st = state_by_uuid.get(sv.uuid)
+            st: Optional[FileState] = state_by_uuid.get(sv.uuid)
             extra = change
             if st and st.size is not None:
                 extra = f"{change} ({_human_size(st.size)})"
@@ -399,7 +399,7 @@ def render_json(
         }
         if sv.uuid in trans_by_uuid:
             node["file_status"] = trans_by_uuid[sv.uuid]
-            st = state_by_uuid.get(sv.uuid)
+            st: Optional[FileState] = state_by_uuid.get(sv.uuid)
             if st:
                 node["file_size"] = st.size
                 node["file_mtime"] = st.mtime
